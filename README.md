@@ -1,6 +1,6 @@
 # RadRotator: 3D Rotation of Radiographs with Diffusion Models
 
-<img src="static/images/ReadMe_IMG.png" height="500">
+<img src="static/images/ReadMe_IMG.png">
 
 This repository contains the GitHub repository for the [RadRotator blog page](https://pouriarouzrokh.github.io/RadRotator).
 
