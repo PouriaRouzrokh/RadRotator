@@ -1,9 +1,8 @@
-# RadRotator
-![img]("static/images/ReadMe_IMG.png")
+# RadRotator: 3D Rotation of Radiographs with Diffusion Models
+
+<img src="static/images/ReadMe_IMG.png" height="500">
 
 This repository contains the GitHub repository for the [RadRotator blog page](https://pouriarouzrokh.github.io/RadRotator).
 
-You can visit our [demo page](https://huggingface.co/spaces/Pouriarouzrokh/RadRotator) on Hugging Face Spaces.
-
-Also, feel free to check our paper on arXiv:
+You can also visit our [demo page](https://huggingface.co/spaces/Pouriarouzrokh/RadRotator) on Hugging Face Spaces, or check our paper on arXiv:
 
