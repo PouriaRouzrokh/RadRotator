@@ -1,1 +1,264 @@
-Hello World!
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="3D Rotation of Radiographs with Diffusion Models.">
+  <meta name="keywords" content="Diffusion Models, Radiograph, Generative AI, Radiology, 3D">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RadRotator: 3D Rotation of Radiographs with Diffusion Models</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">RadRotator: <br />3D Rotation of Radiographs with Diffusion Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://x.com/PRouzrokh">Pouria Rouzrokh, MD MPH MHPE</a><sup>1,2,§</sup>,</span>
+            <span class="author-block">
+              <a href="https://x.com/Khosravi_Bardia">Bardia Khosravi, MD MPH MHPE</a><sup>1,2,§</sup>,</span>
+            <span class="author-block">
+              <a href="https://x.com/ShahriarFaghani">Shahriar Faghani, MD</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="#">Kellen L. Mulford, PhD</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://x.com/tauntonm">Michael J. Taunton, MD</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://x.com/Slowvak">Bradley J. Erickson, MD PhD</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://x.com/CodyWylesMD">Cody C. Wyles, MD</a><sup>2,*</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <br />
+            <span class="author-block"><sup>1</sup> Department of Radiology, Mayo Clinic, Rochester, MN, USA</span>
+            <span class="author-block"><sup>2</sup> Department of Orthopedic Surgery, Mayo Clinic, Rochester, MN, USA</span>
+            <br><br>
+            <span class="author-block"><sup>§</sup> Equal contribution</span>
+            <span class="author-block"><sup>*</sup> Corresponding Author <a href="mailto:wyles.cody@mayo.edu" style="text-decoration:None; color:#4a4a4a !important"><u>(Email)</u></a></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="#  "
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Demo Link. -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/Pouriarouzrokh/RadRotator"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                  <span class="icon">
+                      <i class="fas fa-rocket"></i>
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/xr_2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/xr_1.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/xr_3.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/xr_4.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/xr_5.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/xr_6.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/xr_7.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/xr_8.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/xr_9.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Abstract. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Transforming two-dimensional (2D) images into three-dimensional (3D) volumes is a well-known, 
+            yet challenging problem for the computer vision community. In the medical domain, 
+            a few previous studies attempted to convert two or more input radiographs into computed tomography (CT) volumes. 
+            Following their effort, we introduce a diffusion model-based technology that can rotate the anatomical 
+            content of any input radiograph in 3D space, potentially enabling the visualization of 
+            the entire anatomical content of the radiograph in 3D. Similar to previous studies, we relied on CT volumes 
+            to acquire Digitally Reconstructed Radiographs (DRRs) as the training data for our model. However, 
+            we addressed two significant limitations encountered in previous studies: 1. We utilized conditional 
+            diffusion models with classifier-free guidance instead of Generative Adversarial Networks (GANs) to 
+            achieve higher mode coverage and improved output image quality, with the only trade-off being the inference time, 
+            which is often less critical in medical applications; and 2. We demonstrated that the unreliable use of 
+            style transfer deep learning (DL) models, such as Cycle-GAN, to transfer the style of actual radiographs 
+            to DRRs could be replaced with a simple, yet effective training transformation that randomly changes the 
+            pixel intensity histograms of the input and ground-truth imaging data during training. This transformation 
+            makes the diffusion model agnostic to any distribution variations of the input data pixel intensity, 
+            enabling the reliable training of a DL model on input DRRs and applying the exact same model to conventional 
+            radiographs (or DRRs) during inference.
+          </p>
+        </div>
+        <img src="./static/images/model.png" border=1 alt="Abstract image." /> 
+      </div>
+    </div>
+  </div>
+<!--/ Abstract. -->
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{Rouzrokh,
+    title = {RadRotator: 3D Rotation of Radiographs with Diffusion Models},
+    year = {2024},
+    doi = {https://doi.org/10.1016/j.cmpb.2023.107832},
+    url = {https://www.sciencedirect.com/science/article/pii/S0169260723004984},
+    author = {Pouria Rouzrokh and Bardia Khosravi and Shahriar Faghani and Kellen Mulford and Michael J. Taunton and Bradley J. Erickson and Cody C. Wyles}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="#">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/BardiaKh/Mediffusion" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content center-text">
+          <p>
+            Thanks to <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> for open-sourcing this website code.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
