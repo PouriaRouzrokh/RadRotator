@@ -139,6 +139,9 @@ body {
 }
 
 .interpolation-video-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .interpolation-panel .slider {
@@ -151,7 +154,12 @@ body {
 
 #interpolation-image-wrapper {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 #interpolation-image-wrapper img {
   border-radius: 5px;
+  justify-content: center;
 }
