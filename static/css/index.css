@@ -142,10 +142,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.interpolation-panel .slider {
-  margin: 0 !important;
+  justify-content: center;
 }
 
 .interpolation-panel .slider {
@@ -161,5 +158,4 @@ body {
 
 #interpolation-image-wrapper img {
   border-radius: 5px;
-  justify-content: center;
 }
