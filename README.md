@@ -1,4 +1,6 @@
 # RadRotator
+![img]("static/images/ReadMe_IMG.png")
+
 This repository contains the GitHub repository for the [RadRotator blog page](https://pouriarouzrokh.github.io/RadRotator).
 
 You can visit our [demo page](https://huggingface.co/spaces/Pouriarouzrokh/RadRotator) on Hugging Face Spaces.
