@@ -285,7 +285,7 @@
           <p>
             In our methodology, we trained a conditional Denoising Diffusion Probabilistic Model (DDPM) that accepts an input radiograph 
             along with a set of transformations (along the x, y, and z axes) and outputs a radiograph rotated according to those specified transformations. 
-            The transformation values used during training were chosen from a predefined set: {-15°, -10°, -5°, -2°, 0°, +2°, +5°, +10°, +15°}. 
+            The transformation values used during training were chosen from a predefined set: [-15°, +15°]. 
             As anticipated, our model successfully learned to apply transformations corresponding to one of these values in each axis to the input radiograph:
           </p>
           <img src="./static/images/results_1.png" border=1 alt="Abstract image." /> 
@@ -295,10 +295,8 @@
           <br>
           <br>
           <p>
-            However, we also discovered that our model can apply transformation values it had not encountered during training. 
-            For instance, the model could reliably execute a transformation of [-7°, 3°, 12°], despite the fact that the values 7, 3, and 12 
-            were not included among the potential transformation values during the training phase. This observation led us to understand 
-            that our model has acquired the ability to manipulate the input radiograph across the entire spectrum of [-15°, +15°] along any of the three axes. 
+            However, we also discovered that our model can apply consistent transformations to the input radiograph across the entire spectrum of [-15°, +15°] along any of the three axes. 
+            The key for doing so lies in feeding a constant noisy image to the model during inference for all predictions along the desired spectrum.
             We leveraged this capability, combined with interpolation techniques in the embedding space, to generate a comprehensive range 
             of rotations for various input radiographs. This approach effectively simulates the consistent rotation of an anatomical 
             volume in 3D space, illustrating the model's versatility in creating detailed and varied transformations. 
