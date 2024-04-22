@@ -4,7 +4,7 @@
 
 This repository contains the GitHub repository for the [RadRotator blog page](https://pouriarouzrokh.github.io/RadRotator).
 
-You can also visit our [demo page](https://huggingface.co/spaces/Pouriarouzrokh/RadRotator) on Hugging Face Spaces, or check our paper on arXiv: https://arxiv.org/abs/2404.13000
+You can also visit our [demo page](https://huggingface.co/spaces/Pouriarouzrokh/RadRotator) on Hugging Face Spaces, or check our paper on [arXiv](https://arxiv.org/abs/2404.13000). 
 
 ### Citation
 
